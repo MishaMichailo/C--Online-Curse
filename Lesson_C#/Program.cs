@@ -4,11 +4,11 @@
     {
         // Task 1
         Console.WriteLine("Enter  side a: ");
-        int a = int.Parse(Console.ReadLine());
+        float a = float.Parse(Console.ReadLine());
         while (a <=0)
         {
             Console.WriteLine("Enter value >0 :  ");
-            a = int.Parse(Console.ReadLine());
+            a = float.Parse(Console.ReadLine());
         }
         Console.WriteLine("Area square is " + a*a);
         Console.WriteLine("Perimeter " + 4*a);
@@ -17,7 +17,7 @@
         //Task 2
         int num;
         Console.WriteLine("What is your name?");
-        string name = Console.ReadLine();
+        string? name = Console.ReadLine();
         while( name == "" ||  int.TryParse(name, out num))
         {
             Console.WriteLine("You don`t enter your name,please enter again");
@@ -25,7 +25,7 @@
         }
         Console.WriteLine($"How old are you,{name}?");
         int age;
-        string line = Console.ReadLine();
+        string? line = Console.ReadLine();
         
         while (!int.TryParse(line,out age) || age <= 0) 
         {
@@ -40,7 +40,7 @@
         double radius;
         double pi = 3.14;
         Console.WriteLine("Enter radius");
-        string p_i = Console.ReadLine();
+        string? p_i = Console.ReadLine();
         while (!double.TryParse(p_i,out radius) || radius <= 0)
         {
             Console.WriteLine("Enter radius");

@@ -29,14 +29,7 @@
         Console.WriteLine("Enter number in range [-5....5]:  ");
         float num = float.Parse(Console.ReadLine());
 
-        if(num >= -5 && num <= 5)
-        {
-            Console.WriteLine("Your number is in range [-5....5]");
-        }
-        else
-        {
-            Console.WriteLine("Your nimber is out of this range  [-5....5]");
-        }
+        string line = (num >= -5 && num <= 5) ? "This num is in range [-5....5]" : "This num is out range [-5....5]";
 
 
 
@@ -70,7 +63,7 @@
         //-------Task 3 
         Console.WriteLine("Enter number of HTTP Error (400,401,402,403,404,405): ");
         int? err = int.Parse(Console.ReadLine());
-                switch (err)
+               /* switch (err)
                 {
                     case (int?)Error.Bad_Request:
                         Console.WriteLine(Error.Bad_Request);
@@ -90,7 +83,18 @@
                     case (int?)Error.Method_Not_Allowed:
                         Console.WriteLine(Error.Method_Not_Allowed);
                         break;
-                }
+                }*/
+      Error error = Enum.Parse<Error>(Console.ReadLine());
+            if (error == Error.Bad_Request)
+               Console.WriteLine(Error.Bad_Request);
+            if (error == Error.Bad_Request)
+                Console.WriteLine(Error.Payment_Required);
+            if (error == Error.Payment_Required)
+                Console.WriteLine(Error.Not_Found);
+            if (error == Error.Not_Found)
+                Console.WriteLine(Error.Not_Found);
+            if (error == Error.Method_Not_Allowed)
+                Console.WriteLine(Error.Not_Found);
 
 
         //--------Task 4 
